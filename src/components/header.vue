@@ -13,7 +13,7 @@ export default{
 
 <template>
    <div class="title-pj">
-      <h1>PImg</h1>
+      <h1>PImg.</h1>
    </div>
 </template>
 
