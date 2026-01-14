@@ -12,7 +12,9 @@ export default{
 </script>
 
 <template>
-
+   <div>
+      <h1>PImg</h1>
+   </div>
 </template>
 
 <style lang="scss">
