@@ -18,10 +18,16 @@
 body{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 10rem;
     height: 100vh;
 }
 
+// header
+.title-pj{
+    font-size: x-large;
+}
+
+// main
 .main-div{
     padding: 3rem;
     background-color: var(--less-dark-bg);
