@@ -33,6 +33,10 @@ body{
     background-color: var(--less-dark-bg);
 }
 
+.preview-div{
+    background-color: var(--less-dark-bg);
+}
+
 .preview-div h3{
     background-color: var(--less-dark-bg);
     margin-top: 0.5rem;
@@ -40,6 +44,11 @@ body{
 
 .main-div img{
     max-width: 350px;
+}
+
+.main-div button{
+    color: lightgray;
+    border: none;
 }
 
 // footer

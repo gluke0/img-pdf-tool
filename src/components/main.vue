@@ -30,7 +30,7 @@ export default{
          <img :src="imageDataUrl" alt="preview"/>
       </div>
       <button v-if="imageDataUrl" @click="downloadPdf">
-      Download PDF
+      <i class="fa-solid fa-download"></i> Download PDF
       </button>
   </div>
 </template>
