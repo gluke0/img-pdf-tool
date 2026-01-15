@@ -47,8 +47,14 @@ body{
 }
 
 .main-div button{
+    background-color: var(--less-dark-bg);
     color: lightgray;
     border: none;
+}
+
+.main-div button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 // footer
