@@ -33,4 +33,13 @@ body{
     background-color: var(--less-dark-bg);
 }
 
+.preview-div h3{
+    background-color: var(--less-dark-bg);
+    margin-top: 0.5rem;
+}
+
+.main-div img{
+    max-width: 350px;
+}
+
 // footer

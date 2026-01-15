@@ -25,9 +25,9 @@ export default{
 <template>
    <div class="main-div">
       <input type="file" accept="image/*" @change="onFileChange"/>
-      <div v-if="imageDataUrl">
+      <div class="preview-div" v-if="imageDataUrl">
          <h3>Preview</h3>
-         <img :src="imageDataUrl" alt="preview" style="max-width: 300px;"/>
+         <img :src="imageDataUrl" alt="preview"/>
       </div>
       <button v-if="imageDataUrl" @click="downloadPdf">
       Download PDF
