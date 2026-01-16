@@ -14,6 +14,7 @@ export default{
 <template>
    <div class="title-pj">
       <h1>PImg.</h1>
+      <h2>Your photos turn into PDFs.</h2>
    </div>
 </template>
 
