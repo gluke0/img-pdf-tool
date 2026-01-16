@@ -10,7 +10,7 @@ export default{
     onFileChange(event){
       const file = event.target.files[0];
       if (!file) return;
-      window.imageToDataUrl(file, (dataUrl) =>{ // global helper [web:48][web:51]
+      window.imageToDataUrl(file, (dataUrl) =>{
         this.imageDataUrl = dataUrl;
       });
     },

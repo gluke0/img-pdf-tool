@@ -32,7 +32,7 @@ window.generatePdfFromImage = function (imageDataUrl){
     let imgHeight = pageHeight
     let y = Math.max((pageHeight - imgHeight) / 2, 0)
 
-    pdf.addImage(imageDataUrl, 'PNG', 0, y, imgWidth, imgHeight) // [web:11][web:52]
+    pdf.addImage(imageDataUrl, 'PNG', 0, y, imgWidth, imgHeight)
     pdf.save('image.pdf')
   }
   img.src = imageDataUrl
