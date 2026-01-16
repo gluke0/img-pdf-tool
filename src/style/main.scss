@@ -45,7 +45,7 @@ body{
     font-weight: 600;
 }
 
-.preview-div{
+.preview-div, .main-div span, .main-div .fa-solid{
     background-color: var(--less-dark-bg);
 }
 
@@ -58,11 +58,15 @@ body{
     max-width: 350px;
 }
 
+.main-div .download-word{
+    margin: 0 1rem;
+}
+
 .main-div button{
     background-color: var(--less-dark-bg);
     color: lightgray;
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     width: 100%;
 }
@@ -71,5 +75,3 @@ body{
     cursor: pointer;
     transform: scale(1.1);
 }
-
-// footer
