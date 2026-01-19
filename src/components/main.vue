@@ -36,7 +36,7 @@ export default {
       <div class="bew">
         <div class="bew">
           <input type="checkbox" v-model="isGrayscale"/>
-          Black and white
+          <span class="bew-text">Black and white</span>
         </div>
       </div>
     </div>
