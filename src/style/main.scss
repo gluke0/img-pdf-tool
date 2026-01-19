@@ -4,6 +4,7 @@
 :root{
     --dark-bg: #222220;
     --less-dark-bg: #272725;
+    --global-text: #d3d3d3;
 }
 
 *{
@@ -12,7 +13,7 @@
     box-sizing: border-box;
     font-family: Saira;
     background-color: var(--dark-bg);
-    color: lightgray;
+    color: var(--global-text);
 }
 
 body{
@@ -77,7 +78,7 @@ body{
 
 .main-div button{
     background-color: var(--less-dark-bg);
-    color: lightgray;
+    color: var(--global-text);
     border: none;
     font-size: 1.2rem;
     font-weight: 600;
