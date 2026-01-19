@@ -37,6 +37,8 @@ body{
 .main-div{
     padding: 3rem;
     background-color: var(--less-dark-bg);
+    position: sticky;
+    z-index: 1;
 }
 
 .main-div input{
@@ -85,4 +87,6 @@ footer{
 
 .footer-div{
     font-size: smaller;
+    position: absolute;
+    bottom: 1px;
 }
