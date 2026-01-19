@@ -34,10 +34,10 @@ export default {
         alt="preview"
         :style="{filter: isGrayscale ? 'grayscale(100%)' : 'none'}"/>
       <div class="bew">
-        <label>
+        <div class="bew">
           <input type="checkbox" v-model="isGrayscale"/>
           Black and white
-        </label>
+        </div>
       </div>
     </div>
     <button v-if="imageDataUrl" @click="downloadPdf">
