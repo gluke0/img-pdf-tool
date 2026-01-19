@@ -76,3 +76,13 @@ body{
     cursor: pointer;
     transform: scale(1.1);
 }
+
+// footer
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-div{
+    font-size: smaller;
+}
