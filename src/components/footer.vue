@@ -12,7 +12,11 @@ export default{
 </script>
 
 <template>
-    
+    <footer>
+         <div class="footer-div">
+            2026 - gluke
+         </div>
+    </footer>
 </template>
 
 <style lang="scss">
