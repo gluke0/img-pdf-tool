@@ -5,6 +5,7 @@
     --dark-bg: #222220;
     --less-dark-bg: #272725;
     --global-text: #d3d3d3;
+    --darker-text: #5f5d5d;
 }
 
 *{
@@ -46,6 +47,13 @@ body{
 
 .question i:hover{
     transform: scale(1.1);
+}
+
+.helper-text{
+    line-height: 1.2;
+    font-size: small;
+    font-style: italic;
+    color: var(--darker-text);
 }
 
 // main

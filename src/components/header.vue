@@ -20,6 +20,13 @@ export default{
             <i class="fa-regular fa-circle-question"></i>
          </p>
       </div>
+      <div class="helper-text">
+         <span>
+            Instant photo-to-PDF: Choose color or B&W and download your file!
+            <br>
+            It is easy. It is PImg!
+         </span>
+      </div>
    </div>
 </template>
 
