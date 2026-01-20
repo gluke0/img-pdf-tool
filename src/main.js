@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
-import jsPDF from 'jspdf';
+import jsPDF from 'jspdf'
 
 createApp(App).mount('#app')
 
@@ -10,14 +9,44 @@ window.jsPDF = jsPDF
 
 window.imageToDataUrl = function (file, cb){
   let reader = new FileReader()
-  reader.onload = e => cb(e.target.result)
+  reader.onload = () => cb(reader.result)
   reader.readAsDataURL(file)
 }
 
-window.generatePdfFromImage = function (imageDataUrl){
+// convert to grayscale using canvas filter CanvasRenderingContext2D.filter API
+window.convertToGrayscale = function (dataUrl){
+  return new Promise((resolve) =>{
+    let img = new Image()
+    img.onload = () =>{
+      let canvas = document.createElement('canvas')
+      canvas.width = img.width
+      canvas.height = img.height
+
+      let ctx = canvas.getContext('2d')
+
+      // apply grayscale filter and draw the image
+      ctx.filter = 'grayscale(100%)'
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+      let grayDataUrl = canvas.toDataURL('image/png')
+      resolve(grayDataUrl)
+    }
+
+    img.src = dataUrl
+  })
+}
+
+// main PDF generator
+window.generatePdfFromImage = async function (imageDataUrl, isGrayscale){
   if (!imageDataUrl) return
 
-  let pdf = new window.jsPDF({
+  // if grayscale requested, convert first
+  let imageToUse = imageDataUrl
+  if (isGrayscale){
+    imageToUse = await window.convertToGrayscale(imageDataUrl)
+  }
+
+  const pdf = new window.jsPDF({
     orientation: 'portrait',
     unit: 'pt',
     format: 'a4',
@@ -26,14 +55,17 @@ window.generatePdfFromImage = function (imageDataUrl){
   let pageWidth = pdf.internal.pageSize.getWidth()
   let pageHeight = pdf.internal.pageSize.getHeight()
 
-  let img = new Image()
-  img.onload = ()=>{
-    let imgWidth = pageWidth
-    let imgHeight = pageHeight
-    let y = Math.max((pageHeight - imgHeight) / 2, 0)
+  await new Promise((resolve) =>{
+    let img = new Image()
+    img.onload = () =>{
+      let imgWidth = pageWidth
+      let imgHeight = pageHeight
+      let y = Math.max((pageHeight - imgHeight) / 2, 0)
 
-    pdf.addImage(imageDataUrl, 'PNG', 0, y, imgWidth, imgHeight)
-    pdf.save('image.pdf')
-  }
-  img.src = imageDataUrl
+      pdf.addImage(imageToUse, 'PNG', 0, y, imgWidth, imgHeight)
+      pdf.save('image.pdf')
+      resolve()
+    }
+    img.src = imageToUse
+  })
 }
