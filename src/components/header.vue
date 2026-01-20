@@ -14,7 +14,12 @@ export default{
 <template>
    <div class="title-pj">
       <h1>PImg</h1>
-      <h2>Your photos turn into PDFs.</h2>
+      <div class="subt">
+         <h2>Your photos turn into PDFs.</h2>
+         <p class="question">
+            <i class="fa-regular fa-circle-question"></i>
+         </p>
+      </div>
    </div>
 </template>
 
