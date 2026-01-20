@@ -1,13 +1,16 @@
 <script>
-
 export default{
-   name: "Header",
-   data(){
-      return{
-      }
-   },
-   components:{
-   }
+  name: "Header",
+  mounted(){
+   // toggle the helper
+    let questionMark = document.querySelector('.question');
+    let helperText = document.querySelector('.helper-text');
+    if (questionMark){
+      questionMark.addEventListener('click', () =>{
+        helperText.classList.toggle('hidden');
+      });
+    }
+  }
 };
 </script>
 
@@ -20,7 +23,7 @@ export default{
             <i class="fa-regular fa-circle-question"></i>
          </p>
       </div>
-      <div class="helper-text">
+      <div class="helper-text hidden">
          <span>
             Instant photo-to-PDF: Choose color or B&W and download your file!
             <br>
