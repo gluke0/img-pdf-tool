@@ -37,7 +37,7 @@ export default{
         <span class="bew-text">Black and white</span>
       </div>
     </div>
-    <div v-if="imageDataUrl" @click="downloadPdf">
+    <div class="div-div" v-if="imageDataUrl" @click="downloadPdf">
       <button class="download-div">
         <span>Download PDF</span>
       </button>
