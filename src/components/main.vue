@@ -39,6 +39,7 @@ export default{
     </div>
     <div class="div-div" v-if="imageDataUrl" @click="downloadPdf">
       <button class="download-div">
+        <i class="fa-regular fa-file-pdf"></i>
         <span>Download PDF</span>
       </button>
     </div>
