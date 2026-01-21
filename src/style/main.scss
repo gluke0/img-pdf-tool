@@ -158,6 +158,10 @@ footer{
 
 @media screen and (max-width: 480px){
     
+    #app{
+        padding: 0.8rem;
+    }
+
     body{
         min-width: 100vw;
         overflow-x: hidden;
