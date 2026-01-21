@@ -143,6 +143,15 @@ footer{
 }
 
 // media queries 
+@media screen and (max-width: 3500px){
+
+    .bew{
+        justify-content: center;
+        margin: auto;
+    }
+
+}
+
 @media screen and (max-width: 1024px){
 
     .bew{
