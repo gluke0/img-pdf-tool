@@ -155,6 +155,27 @@ footer{
 
 }
 
+
 @media screen and (max-width: 480px){
     
+    body{
+        min-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .title-pj {
+        font-size: large;
+    }
+
+    .title-pj h2 {
+        font-size: small;
+        margin-bottom: 0.3rem;
+    }
+
+     .main-div input {
+        width: 100%;
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
 }
