@@ -90,7 +90,7 @@ body{
 .bew{
     background-color: var(--less-dark-bg);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 1rem;
 }
 
@@ -190,6 +190,20 @@ footer{
         max-width: 100%;
         height: auto;
         margin: 0.3rem 0;
+    }
+
+    .bew{
+        font-size: small;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .bew input{
+        width: 15%;
+    }
+
+    .bew-text{
+        margin-left: 0rem!important;
     }
 
     .footer-div{
