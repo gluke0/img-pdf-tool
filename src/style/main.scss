@@ -167,19 +167,29 @@ footer{
         overflow-x: hidden;
     }
 
-    .title-pj {
+    .title-pj{
         font-size: large;
     }
 
-    .title-pj h2 {
+    .title-pj h2{
         font-size: small;
         margin-bottom: 0.3rem;
     }
 
-     .main-div input {
+     .main-div input{
         width: 100%;
         padding: 0.7rem;
         font-size: 0.9rem;
+    }
+
+    .helper-text{
+        font-size: x-small;
+    }
+
+    .main-div img{
+        max-width: 100%;
+        height: auto;
+        margin: 0.3rem 0;
     }
 
 }
