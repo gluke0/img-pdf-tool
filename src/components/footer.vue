@@ -14,7 +14,7 @@ export default{
 <template>
     <footer>
          <div class="footer-div">
-            2026 - gluke
+            2026 <i class="fa-solid fa-code"></i> gluke
          </div>
     </footer>
 </template>
