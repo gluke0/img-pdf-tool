@@ -41,8 +41,14 @@ body{
     justify-content: space-between;
 }
 
+.question{
+    display: flex;
+    align-items: center;
+}
+
 .question i{
     font-size: x-small;
+    margin: auto;
 }
 
 .question i:hover{
