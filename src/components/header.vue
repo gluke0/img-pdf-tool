@@ -3,12 +3,17 @@ export default{
   name: "Header",
   mounted(){
    // toggle the helper
-    let questionMark = document.querySelector('.question');
-    let helperText = document.querySelector('.helper-text');
-    if (questionMark){
-      questionMark.addEventListener('click', () =>{
+   let questionMark = document.querySelector('.question');
+   let helperText = document.querySelector('.helper-text');
+
+    if (questionMark && helperText){
+      let toggleHelper = () =>{
         helperText.classList.toggle('hidden');
-      });
+      };
+
+   questionMark.addEventListener('click', toggleHelper);
+   helperText.addEventListener('click', toggleHelper);
+
     }
   }
 };
