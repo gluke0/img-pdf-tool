@@ -32,7 +32,7 @@ export default{
          <span>
             Instant photo-to-PDF: Choose color or B&W and download your file!
             <br>
-            It is easy. It is PImg!
+            It's easy. It's PImg!
          </span>
       </div>
    </div>
