@@ -31,7 +31,6 @@ window.convertToGrayscale = function (dataUrl){
       let grayDataUrl = canvas.toDataURL('image/png')
       resolve(grayDataUrl)
     }
-
     img.src = dataUrl
   })
 }
