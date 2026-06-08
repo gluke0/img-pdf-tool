@@ -37,34 +37,37 @@ window.convertToGrayscale = function (dataUrl){
 
 // main PDF generator
 window.generatePdfFromImage = async function (imageDataUrl, isGrayscale){
-  if (!imageDataUrl) return
+  if (!imageDataUrl) return;
 
-  // if grayscale requested, convert first
-  let imageToUse = imageDataUrl
-  if (isGrayscale){
-    imageToUse = await window.convertToGrayscale(imageDataUrl)
+  // grayscale
+  let imageToUse = imageDataUrl;
+  if (isGrayscale) {
+    imageToUse = await window.convertToGrayscale(imageDataUrl);
   }
 
-  const pdf = new window.jsPDF({
-    orientation: 'portrait',
-    unit: 'pt',
-    format: 'a4',
-  })
-
-  let pageWidth = pdf.internal.pageSize.getWidth()
-  let pageHeight = pdf.internal.pageSize.getHeight()
-
   await new Promise((resolve) =>{
-    let img = new Image()
+    let img = new Image();
     img.onload = () =>{
-      let imgWidth = pageWidth
-      let imgHeight = pageHeight
-      let y = Math.max((pageHeight - imgHeight) / 2, 0)
+      // portrait or lanscape based on image dimensions
+      let orientation = img.width > img.height ? 'landscape' : 'portrait';
 
-      pdf.addImage(imageToUse, 'PNG', 0, y, imgWidth, imgHeight)
-      pdf.save('image.pdf')
-      resolve()
-    }
-    img.src = imageToUse
-  })
-}
+      let pdf = new window.jsPDF({
+        orientation: orientation,
+        unit: 'pt',
+        format: 'a4',
+      });
+
+      let pageWidth = pdf.internal.pageSize.getWidth();
+      let pageHeight = pdf.internal.pageSize.getHeight();
+      let imgWidth = pageWidth;
+      let imgHeight = pageHeight;
+      let y = Math.max((pageHeight - imgHeight) / 2, 0);
+
+      pdf.addImage(imageToUse, 'PNG', 0, y, imgWidth, imgHeight);
+      pdf.save('image.pdf');
+      
+      resolve();
+    };
+    img.src = imageToUse;
+  });
+};
