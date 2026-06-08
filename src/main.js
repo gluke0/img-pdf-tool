@@ -39,16 +39,16 @@ window.convertToGrayscale = function (dataUrl){
 window.generatePdfFromImage = async function (imageDataUrl, isGrayscale){
   if (!imageDataUrl) return;
 
-  // grayscale
+  // grayscale 
   let imageToUse = imageDataUrl;
-  if (isGrayscale) {
+  if (isGrayscale){
     imageToUse = await window.convertToGrayscale(imageDataUrl);
   }
 
-  await new Promise((resolve) =>{
+  await new Promise((resolve) => {
     let img = new Image();
     img.onload = () =>{
-      // portrait or lanscape based on image dimensions
+      // landscape or portrait
       let orientation = img.width > img.height ? 'landscape' : 'portrait';
 
       let pdf = new window.jsPDF({
@@ -59,11 +59,25 @@ window.generatePdfFromImage = async function (imageDataUrl, isGrayscale){
 
       let pageWidth = pdf.internal.pageSize.getWidth();
       let pageHeight = pdf.internal.pageSize.getHeight();
-      let imgWidth = pageWidth;
-      let imgHeight = pageHeight;
+
+      // get img dimensions
+      let imgWidth = img.width;
+      let imgHeight = img.height;
+
+      // scaling
+      let widthRatio = pageWidth / imgWidth;
+      let heightRatio = pageHeight / imgHeight;
+      let minRatio = Math.min(widthRatio, heightRatio);
+
+      // scale only if it can't fit in the a4 page and center
+      if (minRatio < 1) {
+        imgWidth = imgWidth * minRatio;
+        imgHeight = imgHeight * minRatio;
+      }
+      let x = Math.max((pageWidth - imgWidth) / 2, 0);
       let y = Math.max((pageHeight - imgHeight) / 2, 0);
 
-      pdf.addImage(imageToUse, 'PNG', 0, y, imgWidth, imgHeight);
+      pdf.addImage(imageToUse, 'PNG', x, y, imgWidth, imgHeight);
       pdf.save('image.pdf');
       
       resolve();
